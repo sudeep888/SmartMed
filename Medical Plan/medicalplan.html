@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Plan</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="session-details">
+        <h2>Session Details</h2>
+        <button class="accordion">Details</button>
+        <div class="accordion-content">
+            <p>Your session details will be displayed here...</p>
+        </div>
+    </div>
+    
+    <div id="user-details">
+        <h2>User Details</h2>
+        <button class="accordion">User Info</button>
+        <div class="accordion-content">
+            <p>User details will be populated here...</p>
+        </div>
+    </div>
+    
+    <div id="medical-plan-section">
+        <h2>Medical Plan</h2>
+        <button class="accordion">Plan Overview</button>
+        <div class="accordion-content">
+            <p>The medical plan information will be available here...</p>
+        </div>
+    </div>
+
+    <div id="chat-container">
+        <div id="response-output">
+         
+            <div class="message bot-message">
+                Hello! How can I assist you today?
+                <div class="timestamp">10:00 AM</div>
+            </div>
+        </div>
+        <div id="loading-spinner" class="spinner" style="display: none;"></div>
+        <div id="user-input-container">
+            <input type="text" id="user-query-input" placeholder="Type your query here" />
+            <button id="send-query-button" onclick="fetchData()">Send</button>
+        </div>
+    </div>
+    
+    <script>
+ 
+        document.querySelectorAll('.accordion').forEach(accordion => {
+            accordion.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                this.classList.toggle('active');
+
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.0/firebase-app-compat.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/9.22.0/firebase-database-compat.min.js"></script>
+    <script type="module" src="medicalplan.js" defer></script> 
+</body>
+</html>
