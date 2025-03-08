@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="profile.css">
+    <script type="module" src="https://rex1671.github.io/SmartMed/Authentication/firebaseauth.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="form-title">User Profile</h1>
+        
+       
+        <div id="profileData" class="profile-data"></div>
+        <button id="editProfileBtn" class="btn">Edit Profile</button>
+        
+        <form id="updateProfileForm" style="display: none;">
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="updateName" placeholder="Full Name" required>
+                <label for="updateName">Full Name</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-calendar"></i>
+                <input type="date" id="updateDob" required>
+                <label for="updateDob">Date of Birth</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="updateEmergencyContact" placeholder="Emergency Contact" required>
+                <label for="updateEmergencyContact">Emergency Contact</label>
+            </div>
+            <div class="input-group">
+                <label id="genderLabel">Gender:</label>
+                <div class="gender-options" role="radiogroup" aria-labelledby="genderLabel">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-arrows-alt-v"></i>
+                <input type="number" id="updateHeight" placeholder="Height (cm)" required>
+                <label for="updateHeight">Height</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="text" id="updatePhone" placeholder="Phone Number" required>
+                <label for="updatePhone">Phone Number</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-balance-scale"></i>
+                <input type="number" id="updateWeight" placeholder="Weight (kg)" required>
+                <label for="updateWeight">Weight</label>
+            </div>
+            <button type="submit" class="btn">Update Profile</button>
+        </form>
+        
+        <div id="messageDiv" class="messageDiv" style="display:none;"></div>
+    </div>
+
+    <script type="module" src="profile.js"></script>
+</body>
+</html>
