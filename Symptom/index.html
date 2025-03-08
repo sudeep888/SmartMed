@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical AI Assistant</title>
+    <script type="importmap">
+        {"imports":{"@google/generative-ai":"https://esm.run/@google/generative-ai"}}
+    </script>
+    <script type="module" src="script3.js" defer></script>
+    
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Medical AI Assistant</h1>
+
+        <label for="prompt" class="label">Enter initial diagnosis of the image:</label>
+        <div class="input-container">
+            <textarea id="prompt" rows="5" cols="40" class="textarea"></textarea>
+            <div class="icon-container">
+                <img id="mic-icon" src="mic.png" alt="Microphone" class="mic-icon" aria-label="Microphone"/>
+                <img id="img-upload" src="img-upload.png" alt="Upload Image" class="image-icon" aria-label="Upload Image"/>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*"/>
+            </div>
+        </div>
+
+        <button id="submitButton" class="button">
+            <i class="fas fa-paper-plane"></i> Submit Symptom
+        </button>
+
+      
+        <div id="spinner" class="spinner" style="display: none;"></div>
+
+        <div id="output" style="visibility: hidden;"></div><br>
+        <div id="followUpContainer" class="follow-up-container">Diagnosis Output</div>
+    </div>
+</body>
+</html>
